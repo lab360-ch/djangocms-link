@@ -147,7 +147,7 @@ class AbstractLink(CMSPlugin):
     def get_link(self):
         if self.internal_link:
             ref_page = self.internal_link
-            link = ref_page.get_absolute_url()
+            link = ref_page.get_absolute_url(language=self.language)
 
             # simulate the call to the unauthorized CMSPlugin.page property
             cms_page = self.placeholder.page if self.placeholder_id else None
